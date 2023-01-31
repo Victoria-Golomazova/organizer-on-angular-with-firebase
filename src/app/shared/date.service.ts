@@ -6,5 +6,5 @@ import { BehaviorSubject } from "rxjs";
   providedIn: 'root'
 })
 export class DateService {
-  public date: BehaviorSubject<moment.Moment> = new BehaviorSubject(moment())
+  public date: BehaviorSubject<moment.Moment> = new BehaviorSubject(moment());
 }
