@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    margin: 0 2rem;
+    text-align: center;
+    width: 200px;
+  }
+
+  .arrow {
+    cursor: pointer;
+    user-select: none;
+  }
+}

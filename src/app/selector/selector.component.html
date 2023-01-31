@@ -1,1 +1,7 @@
-<p>selector works!</p>
+<div>
+  <i class="material-icons arrow" (click)="go(-1)">arrow_left</i>
+
+  <span> {{ date | async | moment }}</span>
+
+  <i class="material-icons arrow" (click)="go(1)">arrow_right</i>
+</div>
