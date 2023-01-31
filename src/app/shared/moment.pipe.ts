@@ -3,10 +3,11 @@ import * as moment from 'moment';
 
 
 @Pipe({
-  name: 'moment'
+  name: 'moment',
+  pure: false,
 })
 export class MomentPipe implements PipeTransform {
-  transform(value: moment.Moment, format: string = 'MMMM YYYY'): string {
-    return value.format(format)
+  transform(value: moment.Moment | null, format: string = 'MMMM YYYY'): string {
+    return value!.format(format)
   }
 }

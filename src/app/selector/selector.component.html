@@ -1,7 +1,7 @@
 <div>
-  <i class="material-icons">arrow_left</i>
+  <i class="material-icons arrow" (click)="go(-1)">arrow_left</i>
 
-  <span></span>
+  <span> {{ date | async | moment }}</span>
 
-  <i class="material-icons">arrow_right</i>
+  <i class="material-icons arrow" (click)="go(1)">arrow_right</i>
 </div>

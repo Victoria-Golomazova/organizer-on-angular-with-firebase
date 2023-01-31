@@ -8,4 +8,9 @@ div {
     text-align: center;
     width: 200px;
   }
+
+  .arrow {
+    cursor: pointer;
+    user-select: none;
+  }
 }
