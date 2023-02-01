@@ -15,6 +15,7 @@ export type Task = {
   title: string,
   id?: string,
   date?: string,
+  isDone?: boolean,
 }
 
 export interface CreateResponse {

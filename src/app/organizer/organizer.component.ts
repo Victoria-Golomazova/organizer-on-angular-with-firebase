@@ -45,7 +45,8 @@ export class OrganizerComponent implements OnInit {
     const task: Task = {
       title,
       date: this._dateService.date.value.format('DD-MM-YYYY'),
-      id: ''
+      id: '',
+      isDone: false,
     }
 
     this._taskService.create(task)
@@ -56,14 +57,30 @@ export class OrganizerComponent implements OnInit {
           title: r.title,
           date: r.date,
           id: r.id,
+          isDone: r.isDone
         });
       })
   }
 
   public remove(task: Task) {
     this._taskService.remove(task)
+      .pipe(untilDestroyed(this))
       .subscribe(() => {
         this.tasks = this.tasks.filter((t) => t.id !== task.id)
+      })
+  }
+
+  public toggleDone(task: Task) {
+    const modifiedTask: Task = {
+      title: task.title,
+      id: task.id,
+      date: task.date,
+      isDone: !task.isDone,
+    }
+    this._taskService.toggleDone(modifiedTask)
+      .pipe(untilDestroyed(this))
+      .subscribe((res) => {
+        task.isDone = res.isDone;
       })
   }
 }

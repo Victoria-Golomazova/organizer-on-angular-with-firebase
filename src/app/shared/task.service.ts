@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http'
 import { CreateResponse, Task } from "./types";
-import { map, Observable } from "rxjs";
+import { map, Observable, pipe } from "rxjs";
 import * as moment from "moment";
 
 @Injectable({
@@ -37,5 +37,11 @@ export class TaskService {
   public remove(task: Task): Observable<void> {
     return this._http
       .delete<void>(`${TaskService.url}/${task.date}/${task.id}.json`)
+  }
+
+  public toggleDone(task: Task): Observable<Task> {
+    return this._http
+      .put<Task>(`${TaskService.url}/${task.date}/${task.id}.json`, task)
+      .pipe(map(r => r))
   }
 }

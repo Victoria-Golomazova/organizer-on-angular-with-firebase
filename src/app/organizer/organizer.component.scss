@@ -10,6 +10,7 @@ section {
     position: sticky;
     top: 0;
     background: var(--bg-color);
+    z-index: 2;
 
     form {
       display: flex;
@@ -18,9 +19,9 @@ section {
       padding-right: 0.5rem;
 
       input {
-        background: transparent;
+        background: var(--bg-color);
         color: var(--dark-color);
-        font-family: var(--itim);;
+        font-family: var(--itim);
         border-radius: 10px;
       }
     }
@@ -35,8 +36,64 @@ section {
   margin-bottom: 0.5rem;
 }
 
-
-
 button {
   border-radius: 10px;
 }
+
+.done {
+  text-decoration: line-through;
+  opacity: .6;
+  z-index: 1;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 1rem;
+  }
+
+  .custom-checkbox {
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 0.5px solid var(--dark-color);
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    transition: .1s ease-out;
+    cursor: pointer;
+
+    &:checked {
+      background-color: var(--neutral-color);
+      border: none;
+      color: var(--bg-color);
+    }
+
+    &:after {
+      content: '\2714';
+      font-size: 18px;
+      position: absolute;
+      top: -1px;
+      left: 4px;
+      color: var(--dark-color);
+    }
+
+    &:checked:after {
+      content: '\2714';
+      font-size: 18px;
+      position: absolute;
+      top: -1px;
+      left: 5px;
+      color: var(--bg-color);
+    }
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+}
+

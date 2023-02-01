@@ -22,13 +22,16 @@
   <footer>
     <ul *ngIf="tasks.length; else noTasks">
       <li class="task" *ngFor="let task of tasks; let i = index">
-        <span>
+        <span [class.done]="task.isDone">
           <strong>{{i + 1}}.</strong>
           {{task.title}}
         </span>
-        <button class="btn btn-primary" (click)="remove(task)">
-          <i class="material-icons">delete</i>
-        </button>
+        <div class="buttons">
+          <input type="checkbox" class="custom-checkbox" (change)="toggleDone(task)" [checked]="task.isDone">
+          <button class="btn btn-primary" (click)="remove(task)">
+            <i class="material-icons">delete</i>
+          </button>
+        </div>
       </li>
     </ul>
 
