@@ -1,3 +1,19 @@
 header {
   padding: 1rem 2rem;
 }
+
+.organizer {
+  height: 50vh;
+  overflow: auto;
+}
+
+.organizer::-webkit-scrollbar {
+  width: 6px;
+}
+.organizer::-webkit-scrollbar-track {
+  background: transparent;
+}
+.organizer::-webkit-scrollbar-thumb {
+  background-color: var(--light-color);
+  border-radius: 20px;
+}

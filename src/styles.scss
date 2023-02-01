@@ -1,10 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 :root {
-  --primary-color: #dc3545;
-  --dark-color: #333333;
-  --light-color: #f4f4f4;
+  --primary-color: #fe7171;
+  --dark-color: #5b5252;
+  --neutral-color:#ac9681;
+  --light-color: #dfd5c9;
+  --bg-color: #f7f4ee;
+  --active-color: #8ce730;
+  --itim: 'Itim', sans-serif;
 }
 
 * {
@@ -14,10 +18,10 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-family: var(--itim);
+  font-size: 1.2rem;
   line-height: 1.6;
-  background: #fff;
+  background: var(--bg-color);
   color: var(--dark-color);
 }
 
@@ -27,7 +31,7 @@ a {
   transition: ease-out .2s;
 
   &:hover {
-    color: #666
+    color: var(--neutral-color);
   }
 }
 
@@ -40,7 +44,7 @@ input {
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--neutral-color);
   outline: none;
   margin-bottom: 0.5rem;
 }
@@ -50,6 +54,7 @@ input {
   margin: auto;
   overflow: hidden;
   padding: 0.2rem;
+  height: 100vh;
 }
 
 table th {
@@ -59,18 +64,17 @@ table th {
 .btn {
   display: inline-block;
   background: var(--light-color);
-  color: #333;
+  color: var(--dark-color);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  margin-right: 0.5rem;
   outline: none;
   transition: opacity .2s;
 
   &:disabled {
-    background: var(--dark-color);
-    color: #fff;
+    background: var(--bg-color);
+    color: var(--dark-color);
     cursor: not-allowed;
   }
 
@@ -85,8 +89,8 @@ table th {
 }
 
 .btn-primary {
-  background: var(--primary-color);
-  color: #fff;
+  background: var(--bg-color);
+  color: var(--primary-color);
 }
 
 .text-center {

@@ -1,10 +1,25 @@
 <section>
-  <header>
-    Organizer: <strong>{{ date | async | moment: 'DD.MM.YYYY' }}</strong>
-    <hr />
-  </header>
+    <header>
+      Organizer: <strong>{{ date | async | moment: 'DD.MM.YYYY' }}</strong>
+      <hr />
+    </header>
+  
+    <main>
+      <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <input type="text" formControlName="title" placeholder="I want to do...">
+  
+        <button 
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="form.invalid"
+        >
+          <i class="material-icons">add</i>
+        </button>
+      </form>
+    </main>
+  
 
-  <main>
+  <footer>
     <ul *ngIf="tasks.length; else noTasks">
       <li class="task" *ngFor="let task of tasks; let i = index">
         <span>
@@ -20,19 +35,5 @@
     <ng-template #noTasks>
       <p class="text-center">No tasks yet...</p>
     </ng-template>
-  </main>
-
-  <footer>
-    <form (ngSubmit)="onSubmit()" [formGroup]="form">
-      <input type="text" formControlName="title">
-
-      <button 
-        type="submit"
-        class="btn btn-block btn-primary"
-        [disabled]="form.invalid"
-      >
-      <i class="material-icons">add</i>
-      </button>
-    </form>
   </footer>
 </section>

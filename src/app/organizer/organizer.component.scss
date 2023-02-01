@@ -1,16 +1,42 @@
 section {
   padding: 1rem;
-  border: 1px solid #000;
 
   header {
     margin-bottom: 1rem;
+  }
+
+  main {
+    height: 100%;
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 0.5rem;
+
+      input {
+        background: transparent;
+        color: var(--dark-color);
+        font-family: var(--itim);;
+        border-radius: 10px;
+      }
+    }
   }
 }
 .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 1rem;
-  border: 1px solid #ccc;
+  padding: .5rem;
+  border-bottom: 1px solid var(--neutral-color);
   margin-bottom: 0.5rem;
+}
+
+
+
+button {
+  border-radius: 10px;
 }
